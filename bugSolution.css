@@ -1,0 +1,13 @@
+The following CSS code demonstrates a solution using `rem` units to avoid the issues related to the dynamic nature of `em` units within `calc()`:
+
+```css
+:root {
+  font-size: 16px; /* Set a baseline font size */
+}
+
+.container {
+  width: calc(50% - 1rem);
+}
+```
+
+Using `rem` units ensures that the width adjustment (1rem in this case) remains consistent regardless of changes in parent font sizes.  The root element's font size serves as a fixed reference point.  This approach improves the predictability and consistency of the layout.
