@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error that can occur when using the `calc()` function with percentages and `em` units:
+
+```css
+.container {
+  width: calc(50% - 1em);
+}
+```
+
+This code intends to make the container's width 50% of its parent's width, minus 1em. However, the behavior might be unexpected because the `em` unit's value depends on the parent's font size.  If the parent's font size changes dynamically (e.g., through user settings or responsive design), the `1em` value changes, which in turn affects the calculated width of the container.  This can lead to inconsistent layout and unexpected sizing behavior.
+
+Another subtle issue relates to the order of operations within the `calc()` function.  While the above example is straightforward, more complex calculations involving multiple units (like `px`, `rem`, `%`, etc.) might have unexpected order of operations that lead to incorrect results unless explicitly parenthesized.  Poorly structured CSS `calc()` expressions can be hard to debug because the browser handles the parsing.
